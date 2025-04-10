@@ -19,14 +19,8 @@
     }
 
     a {
-      color: black;
+      color: var(--text-color);
       text-decoration: none;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      a {
-        color: white;
-      }
     }
 
     #project-list {
@@ -93,22 +87,21 @@
   <script>
     fetch('data.json')
       .then(response => response.json())
-      .then(data => {
-        const projectList = document.getElementById('project-list');
-        data.forEach(project => {
-          const listItem = document.createElement('li');
-          const image = document.createElement('img');
-          image.src = `assets/${project.name}.png`;
-          image.onclick = () => window.open(project.link, '_blank');
-          const link = document.createElement('a');
-          link.href = project.link;
-          link.textContent = project.name;
-          link.target = '_blank';
-          listItem.appendChild(image);
-          listItem.appendChild(link);
-          projectList.appendChild(listItem);
-        });
-      });
+      .then(data => data.forEach(project => {
+        const listElement = document.createElement('li');
+        const image = document.createElement('img');
+        image.src = `assets/${project.name}.png`;
+        image.onclick = () => window.open(project.link, '_blank');
+
+        const link = document.createElement('a');
+        link.href = project.link;
+        link.textContent = project.name;
+        link.target = '_blank';
+
+        listElement.appendChild(image);
+        listElement.appendChild(link);
+        document.getElementById('project-list').appendChild(listElement);
+      }));
   </script>
 </body>
 
