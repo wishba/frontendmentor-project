@@ -13,6 +13,13 @@
       color: var(--text-color);
     }
 
+    header {
+      max-width: 50rem;
+      text-align: center;
+      margin: auto;
+      padding: 0 1rem;
+    }
+
     img {
       width: 20rem;
       cursor: pointer;
@@ -78,11 +85,22 @@
 </head>
 
 <body>
-  <a target="_blank" href="http://wishba.github.io">
-    <h1>Wisnu Bayu's Frontend Project</h1>
-  </a>
+  <header>
+    <h1>
+      <a target="_blank" href="http://wishba.github.io">Wisnu Bayu's Frontend Project</a>
+    </h1>
 
-  <ul id="project-list"></ul>
+    <p>
+      I showcase several projects from Frontend Mentor, where I developed website interfaces based on pre-defined
+      designs.
+      These projects helped me sharpen my front-end coding skills, especially in translating UI designs into responsive
+      and functional web pages using HTML, CSS, and JavaScript.
+    </p>
+  </header>
+
+  <main>
+    <ul id="project-list"></ul>
+  </main>
 
   <script>
     fetch('data.json')
