@@ -21,7 +21,7 @@
     }
 
     body {
-      max-width: 80rem;
+      max-width: 48rem;
       margin: 0 auto;
       background-color: var(--bg-color);
       color: var(--text-color);
@@ -109,6 +109,17 @@
       border-radius: 1rem;
       border: .1rem solid var(--border-color);
     }
+
+    footer {
+      margin-top: 2.5rem;
+    }
+
+    .footer {
+      padding-top: 2.5rem;
+      color: rgb(163 163 163 / 1);
+      font-size: 0.875rem;
+      margin: 0 0 2rem;
+    }
   </style>
 </head>
 
@@ -161,6 +172,13 @@
     <ul id="project-list"></ul>
   </section>
 
+  <footer>
+    <hr>
+    <p class="footer">
+      &copy; <span id="copy-year"></span> Wisnu Bayu
+    </p>
+  </footer>
+
   <script>
     fetch('data.json')
       .then(response => response.json())
@@ -194,6 +212,8 @@
       buttonSun.style.display = 'block'
       buttonMoon.style.display = 'none'
     });
+
+    document.getElementById('copy-year').textContent = new Date().getFullYear()
   </script>
 </body>
 
