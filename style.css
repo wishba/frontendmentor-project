@@ -1,3 +1,45 @@
 img {
   max-width: 100%;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding-top: .5rem;
+}
+
+header nav {
+  display: flex;
+  gap: 1rem;
+}
+
+#project ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+#project li {
+  border: 1px solid black;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+#project img {
+  cursor: pointer;
+}
+
+#project a {
+  display: block;
+  margin: 1rem;
+}
