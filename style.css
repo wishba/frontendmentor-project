@@ -77,6 +77,10 @@ header nav {
   cursor: pointer;
 }
 
+#project img:hover {
+  transform: translate(0, -0.5rem);
+}
+
 #project a {
   display: block;
   margin: 1rem;
