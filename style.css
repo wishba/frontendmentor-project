@@ -66,6 +66,12 @@ header nav {
   text-align: center;
 }
 
+@media only screen and (min-width: 768px) {
+  #project ul {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
 #project li {
   border: 1px solid black;
   border-radius: 1rem;
