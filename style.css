@@ -60,11 +60,7 @@ header nav {
   display: flex;
   gap: .5rem;
   align-items: center;
-}
-
-header nav a:not(:last-child) {
-  border-right: 1px solid black;
-  padding-right: .5rem;
+  text-align: center;
 }
 
 #project ul {
