@@ -86,6 +86,8 @@ header nav {
   border: 1px solid black;
   border-radius: 1rem;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 #project img {
@@ -98,7 +100,8 @@ header nav {
 
 #project a {
   display: block;
-  margin: 1rem;
+  margin: auto;
+  padding: 1rem;
 }
 
 footer p {
