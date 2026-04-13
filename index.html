@@ -6,47 +6,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wisnu Bayu - Frontend Project</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 
 <body>
-  <header>
-    <nav>
-      <a href="https://wishba.github.io/">Home</a>|
-      <a href="https://wishba.hashnode.dev/" target="_blank" rel="noopener noreferrer">Blog</a>|
-      <a href="https://www.canva.com/design/DAHDJxYaXkM/cqPNO6tADgUISSa-UfsX5w/edit?utm_content=DAHDJxYaXkM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
-        target="_blank" rel="noopener noreferrer">Resume</a>
-    </nav>
-  </header>
+  <div id="tsparticles"></div>
 
-  <main>
-    <section>
-      <h1> Wisnu Bayu's Frontend Project </h1>
+  <div data-aos="fade-up">
+    <header>
+      <nav>
+        <a href="https://wishba.github.io/">Home</a>|
+        <a href="https://wishba.hashnode.dev/" target="_blank" rel="noopener noreferrer">Blog</a>|
+        <a href="https://www.canva.com/design/DAHDJxYaXkM/cqPNO6tADgUISSa-UfsX5w/edit?utm_content=DAHDJxYaXkM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+          target="_blank" rel="noopener noreferrer">Resume</a>
+      </nav>
+    </header>
 
-      <p>
-        I showcase several projects from Frontend Mentor, where I developed website interfaces based on pre-defined
-        designs.
-        These projects helped me sharpen my front-end coding skills, especially in translating UI designs into
-        responsive
-        and functional web pages using HTML, CSS, and JavaScript.
-      </p>
+    <main>
+      <section>
+        <h1> Wisnu Bayu's Frontend Project </h1>
 
-      <p>
-        Visit my
-        <a class="profile-link" href="https://www.frontendmentor.io/profile/wishba" target="_blank"
-          rel="noopener noreferrer">
-          Frontend Mentor profile.
-        </a>
-      </p>
-    </section>
+        <p>
+          I showcase several projects from Frontend Mentor, where I developed website interfaces based on pre-defined
+          designs.
+          These projects helped me sharpen my front-end coding skills, especially in translating UI designs into
+          responsive
+          and functional web pages using HTML, CSS, and JavaScript.
+        </p>
 
-    <section id="project">
-      <ul id="project-list"></ul>
-    </section>
-  </main>
+        <p>
+          Visit my
+          <a class="profile-link" href="https://www.frontendmentor.io/profile/wishba" target="_blank"
+            rel="noopener noreferrer">
+            Frontend Mentor profile.
+          </a>
+        </p>
+      </section>
 
-  <footer>
-    <p> &copy; <span id="copy-year"></span> Wisnu Bayu </p>
-  </footer>
+      <section id="project">
+        <ul id="project-list"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <p> &copy; <span id="copy-year"></span> Wisnu Bayu </p>
+    </footer>
+  </div>
 
   <script>
     fetch('data.json')
@@ -66,8 +71,37 @@
         listElement.appendChild(link);
         document.getElementById('project-list').appendChild(listElement);
       }));
+  </script>
+  <script>document.getElementById('copy-year').textContent = new Date().getFullYear()</script>
 
-    document.getElementById('copy-year').textContent = new Date().getFullYear()
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init()</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@2/tsparticles.engine.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-links@2/tsparticles.preset.links.bundle.min.js"></script>
+  <script>
+      (async () => {
+        await loadLinksPreset(tsParticles);
+
+        await tsParticles.load("tsparticles", {
+          preset: "links",
+          background: {
+            color: "#ffffff",
+          },
+          particles: {
+            color: {
+              value: "#000000",
+            },
+            links: {
+              color: "#000000",
+            },
+          },
+          fullScreen: {
+            enable: true,
+            zIndex: -1
+          },
+        });
+      })();
   </script>
 </body>
 
